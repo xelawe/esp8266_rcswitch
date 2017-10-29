@@ -17,10 +17,10 @@ RCSwitch mySwitch = RCSwitch();
 
 void init_switch() {
 
-  //mySwitch.enableReceive(3);  // Receiver on interrupt 0 => that is pin #2
+  //mySwitch.enableReceive(1);  // Receiver on interrupt 0 => that is pin #2
 
   // Transmitter is connected to Arduino Pin #D4
-  mySwitch.enableTransmit(1);
+  mySwitch.enableTransmit(3);
 
   // Optional set pulse length.
   mySwitch.setPulseLength(692); //695?

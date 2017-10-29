@@ -37,10 +37,11 @@ void setup() {
 
   wifi_init(gv_hostname);
   delay(500);
-
-  pinMode(button1Pin, INPUT);
-  pinMode(button2Pin, INPUT);
-  pinMode(BUILTIN_LED, OUTPUT);
+  
+  //  pinMode(button1Pin, INPUT);
+  //  pinMode(button2Pin, INPUT);
+  //  pinMode(BUILTIN_LED, OUTPUT);
+   pinMode(3, OUTPUT);
 
   init_ota(gv_hostname);
 
@@ -53,28 +54,31 @@ void loop() {
 
   check_ota();
 
-
-  button1State = digitalRead(button1Pin);
-  button2State = digitalRead(button2Pin);
-
-  if ( (button1State == HIGH) && (button2State == HIGH) ) {
-    // turn LED off:
-    digitalWrite(BUILTIN_LED, HIGH);
-  } else {
-    // one Button pressed
-    // turn LED on:
-    digitalWrite(BUILTIN_LED, LOW);
-    if (button1State == LOW) {
-      send_switch(1);
-    }
-  }
+  
+  //  button1State = digitalRead(button1Pin);
+  //  button2State = digitalRead(button2Pin);
+  
+  //  if ( (button1State == HIGH) && (button2State == HIGH) ) {
+  //    // turn LED off:
+  //    //    digitalWrite(BUILTIN_LED, HIGH);
+  //  } else {
+  //    // one Button pressed
+  //    // turn LED on:
+  //    //    digitalWrite(BUILTIN_LED, LOW);
+  //    if (button1State == LOW) {
+  //      send_switch(0);
+  //    }
+  //    if (button2State == LOW) {
+  //      send_switch(1);
+  //    }
+  //  }
 
   //check_switch();
 
-  //send_switch(1);
-  //delay(2000);
-  //send_switch(0);
-  //delay(2000);
+  send_switch(1);
+  delay(2000);
+  send_switch(0);
+  delay(2000);
 
   delay(100);
 
