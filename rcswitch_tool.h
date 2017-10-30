@@ -17,10 +17,10 @@ RCSwitch mySwitch = RCSwitch();
 
 void init_switch() {
 
-  //mySwitch.enableReceive(1);  // Receiver on interrupt 0 => that is pin #2 was #5
+  //mySwitch.enableReceive(3);  // Receiver on interrupt 0 => that is pin #2 was #5 on d1mini
 
   // Transmitter is connected to Arduino Pin #D4 
-  mySwitch.enableTransmit(3);  // was #4
+  mySwitch.enableTransmit(1);  // was #4 on d1mini
 
   // Optional set pulse length.
   mySwitch.setPulseLength(692); //695?
@@ -41,9 +41,13 @@ void init_switch() {
 
 void send_switch(int iv_state) {
   if ( iv_state == 1 ) {
+    // Raum ein
     mySwitch.send("10111001011110011110011100000000");
     }
   else {
+    // Bad aus
+    mySwitch.send("10110101011010001101010010000000");
+    // Raum aus
     mySwitch.send("10110101011110011110011100000000");
   }
 
