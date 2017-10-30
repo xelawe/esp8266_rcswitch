@@ -45,7 +45,7 @@ void setup() {
 
   init_ota(gv_hostname);
 
-  //init_switch();
+  init_switch();
 
 }
 

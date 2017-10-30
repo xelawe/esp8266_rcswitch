@@ -17,10 +17,10 @@ RCSwitch mySwitch = RCSwitch();
 
 void init_switch() {
 
-  //mySwitch.enableReceive(1);  // Receiver on interrupt 0 => that is pin #2
+  //mySwitch.enableReceive(1);  // Receiver on interrupt 0 => that is pin #2 was #5
 
-  // Transmitter is connected to Arduino Pin #D4
-  mySwitch.enableTransmit(3);
+  // Transmitter is connected to Arduino Pin #D4 
+  mySwitch.enableTransmit(3);  // was #4
 
   // Optional set pulse length.
   mySwitch.setPulseLength(692); //695?
@@ -42,7 +42,7 @@ void init_switch() {
 void send_switch(int iv_state) {
   if ( iv_state == 1 ) {
     mySwitch.send("10111001011110011110011100000000");
-  }
+    }
   else {
     mySwitch.send("10110101011110011110011100000000");
   }
